@@ -10,13 +10,16 @@ import emailjs from '@emailjs/browser';
 const Contact = ({ data, socialData }) => {
   const { title, text, subTitle } = data;
   const form = useRef();
-
+  const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+  
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_gnlgy0h', 'template_bep0jvs', form.current, {
-        publicKey: 'klFOh7EA5oPVpt9ik',
+      .sendForm(serviceId, templateId, form.current, {
+        publicKey: userId,
       })
       .then(
         (result) => {
