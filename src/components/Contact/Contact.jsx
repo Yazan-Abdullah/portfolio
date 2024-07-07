@@ -17,9 +17,7 @@ const Contact = ({ data, socialData }) => {
   
   const sendEmail = (e) => {
     e.preventDefault();
-    console.log("Service ID:", serviceId);
-    console.log("Template ID:", templateId);
-    console.log("User ID:", userId);
+   
 
     emailjs
       .sendForm('service_gnlgy0h', 'template_bep0jvs', form.current, {
