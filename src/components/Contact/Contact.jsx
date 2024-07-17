@@ -11,9 +11,9 @@ import dotenv from 'dotenv';
 const Contact = ({ data, socialData }) => {
   const { title, text, subTitle } = data;
   const form = useRef();
-  // const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-  // const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-  // const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+  const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const userId = process.env.REACT_APP_EMAILJS_USER_ID;
   
   const sendEmail = (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ const Contact = ({ data, socialData }) => {
 
     emailjs
       .sendForm('service_gnlgy0h', 'template_bep0jvs', form.current, {
-        publicKey: 'klFOh7EA5oPVpt9ik',
+        publicKey: '81A9oyrE3rkYAdqeF',
         
       })
       .then(
